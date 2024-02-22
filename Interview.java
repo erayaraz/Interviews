@@ -1,4 +1,3 @@
-
 public class Interview {
 
     /**
@@ -12,22 +11,21 @@ public class Interview {
     public static void countCoins(int value) {
 
         int fiftyCount = value / 50;
-        value = value - 50 * fiftyCount;
+        value %= 50;
 
-        int twenyFiveCount = value / 25;
-        value = value - 25 * twenyFiveCount;
+        int twentyFiveCount = value / 25;
+        value %= 25;
 
         int tenCount = value / 10;
-        value = value - 10 * tenCount;
+        value %= 10;
 
         int fiveCount = value / 5;
-        value = value - 5 * fiveCount;
+        value %= 5;
 
-        int oneCount = value / 1;
-        value = value - 1 * oneCount;
+        int oneCount = value;
 
         System.out.println("50 Count : " + fiftyCount);
-        System.out.println("25 Count : " + twenyFiveCount);
+        System.out.println("25 Count : " + twentyFiveCount);
         System.out.println("10 Count : " + tenCount);
         System.out.println("5 Count : " + fiveCount);
         System.out.println("1 Count : " + oneCount);
@@ -36,6 +34,6 @@ public class Interview {
 
 
     public static void main(String[] args) throws Exception {
-        countCoins(999);
+        countCoins(126);
     }
 }
