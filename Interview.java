@@ -8,10 +8,11 @@ public class Interview {
      * Example2: 507 - 10x:50 + 1x:5 + 2x:1
      * Example3: 999 - 19x:50 + 1x:25 + 2x:10 + 4x:1
      **/
-    
+
     public static void countCoins(int value) {
-        
-        int fiftyCount = getCoinsCounts(50,value);
+
+        int fiftyCount = value / 50;
+        value = value - 50 * fiftyCount;
 
         int twenyFiveCount = value / 25;
         value = value - 25 * twenyFiveCount;
@@ -31,12 +32,6 @@ public class Interview {
         System.out.println("5 Count : " + fiveCount);
         System.out.println("1 Count : " + oneCount);
 
-    }
-
-    private static int getCoinsCounts(final int coinsValue, int value){
-        int count = value / coinsValue;
-        value = value - coinsValue * count;
-        return count;
     }
 
 
